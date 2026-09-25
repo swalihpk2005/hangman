@@ -17,11 +17,13 @@ while True:
         if len(guess)==1 and guess.isalpha():
             if guess in guessed_letters:
                 print("Letter already typed!")
+                print()
                 continue
             else:
                 guessed_letters.append(guess)
                 if guess in movie:
                     print("Correct!")
+                    print()
                     for index, letter in enumerate(movie):
                         if letter==guess:
                             display[index]=guess
@@ -30,8 +32,7 @@ while True:
                     print()
                     if "".join(display)==movie:
                         print("You won!")
-                        print(f"Word: {movie}")
-                        print(f"Lives remaining: {lives_remaining}")
+                        print(f"Movie: {movie}")
                         break
                     else:
                         continue
@@ -39,6 +40,7 @@ while True:
                     print("Wrong!")
                     lives_remaining-=1
                     print(f"Lives remaining: {lives_remaining}")
+                    print()
                     
                     if lives_remaining==0:
                         print("GAME OVER")
